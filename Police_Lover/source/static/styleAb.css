@@ -1,0 +1,133 @@
+/* General Body Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, rgb(59, 53, 56) 0%, rgb(105, 105, 127) 35%, rgb(51, 58, 59) 100%);
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center; /* Vertically center items */
+    background-color: black; /* Navbar background color */
+    padding: 0.1% 2%; /* Padding for the navbar, relative to screen size */
+    height: 50px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin-left: 1vw;
+}
+.logo img {
+    max-height: 50px;  /* Set a max height for the logo */
+    height: 30px;  /* Maintain aspect ratio */
+    width: 30px;  /* Maintain aspect ratio */
+    margin-right: 1vw;  /* Space between image and text */
+}
+.logo p {
+    color: white;
+    font-size: 1.2vw;  /* Responsive font size */
+    margin: 0;
+    letter-spacing: 8px;
+}
+.menu a {
+    text-decoration: none;
+    color: white;
+    margin-left: 7vw;
+    font-size: 1.1vw;
+    letter-spacing: 4px;
+    font-family: "Rajdhani", sans-serif;
+}
+
+/* Content Styles */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 10%;
+    background-color: #f7f7f7;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin: 5% 10%;
+}
+.about-header {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    letter-spacing: 3px;
+}
+.about-text {
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-indent: 2rem;
+}
+.highlight {
+    font-weight: bold;
+    color: #007acc;
+}
+.features-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 2rem;
+}
+.features-list li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+.action-button {
+    background-color: #007acc;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.action-button:hover {
+    background-color: #005f99;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 38vh;
+    height: auto; /* Adjusts height based on content */
+    padding: 10px 20px; /* Adds padding for spacing */
+    display: flex;
+    flex-wrap: wrap; /* Allows text to wrap if it gets too long */
+    align-items: center;
+    justify-content: center;
+    font-family: "Rajdhani", sans-serif;
+    letter-spacing: 3px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    box-sizing: border-box; /* Ensures padding is included in total width */
+    max-width: 100%; /* Ensures footer stays within the viewport width */
+    word-break: break-word; /* Break long words to avoid overflow */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .about-container {
+        margin: 5% 5%;
+        padding: 7% 5%;
+    }
+    .about-header {
+        font-size: 2rem;
+    }
+    .about-text {
+        font-size: 1rem;
+        text-indent: 1rem;
+    }
+    .features-list li {
+        font-size: 1rem;
+    }
+}

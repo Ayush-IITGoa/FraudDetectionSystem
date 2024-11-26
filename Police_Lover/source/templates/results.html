@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="Emblem_of_Goa_Police.png" alt="Goa Police">
+            <p>GOA POLICE</p>
+        </div>
+        
+        <div class="menu">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <!-- <a href="search.html">Search</a> -->
+        </div>
+    </div>
+    <div class="big">
+        <div class="small1">
+            <h1>Results for {{ domain_info['domain'] }}</h1>
+            
+            <h2>Domain Information:</h2>
+            <ul>
+                <li>Registrar: {{ domain_info['registrar'] }}</li>
+                <li>Creation Date: {{ domain_info['creation_date'] }}</li>
+                <li>Expiration Date: {{ domain_info['expiration_date'] }}</li>
+            </ul>
+        
+            <h2>SSL Status:</h2>
+            <ul>
+                <li>SSL Valid: {{ 'Yes' if ssl_status.get('valid') else 'No' }}</li>
+                <li>Valid From: {{ ssl_status.get('valid_from', 'N/A') }}</li>
+                <li>Valid To: {{ ssl_status.get('valid_to', 'N/A') }}</li>
+            </ul>
+        </div>
+        <div class="small2">
+            <h2>Total Score: {{ total_score }}%</h2>
+    
+            <h2>Risk Level: {{ risk_level }}</h2>
+            
+            <!-- Risk-o-meter -->
+            <!-- <div class="risk-meter 
+                {% if risk_level == 'Low Risk' %}
+                    low-risk
+                {% elif risk_level == 'Medium Risk' %}
+                    medium-risk
+                {% else %}
+                    high-risk
+                {% endif %}
+                ">
+                {{ risk_level }}
+            </div> -->
+        </div> 
+    </div>
+
+
+    <a href="/"><button class="checkanotherbutton">Check another URL</button></a>
+    <footer>
+        <div class="footer">
+            Website Policy | Contact Us | Feedback | Help | Site Map <br>
+            Copyright © 2017 Goa Police Department. All Rights Reserved <br>
+            This site is best viewed in 1534x707
+        </div>
+   </footer>
+</body>
+</html>

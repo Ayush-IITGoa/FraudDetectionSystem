@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='urlStyle.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/Emblem_of_Goa_Police.png') }}" alt="Goa Police">
+            <p>GOA POLICE</p>
+        </div>
+        
+        <div class="menu">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+    <div class="form-container">
+        <form method="post" id="urlForm" onsubmit="return validateForm()">
+            <label class="urlhead" for="websiteURL">Enter Website URL:</label>
+            
+            <!-- URL Input -->
+            <input id="url" name="url" placeholder="https://example.com" required>
+    
+            <div class="warning" id="warningMessage" style="display: none;">Website URL is required!</div>
+            
+            <button type="submit" class="urlbutton">Submit</button>
+        </form>
+    </div>
+    
+    <footer>
+        <div class="footer">
+            Website Policy | Contact Us | Feedback | Help | Site Map <br>
+            Copyright © 2017 Goa Police Department. All Rights Reserved <br>
+            This site is best viewed in 1534x707
+        </div>
+    </footer>
+
+    <script>
+        function validateForm() {
+            let websiteURL = document.getElementById("websiteURL").value;
+            let warningMessage = document.getElementById("warningMessage");
+
+            // Only show the warning message if the URL is empty after clicking submit
+            if (websiteURL === "") {
+                warningMessage.style.display = "block";  // Show the warning
+            } else {
+                warningMessage.style.display = "none";  // Hide the warning if URL is filled
+                alert("Form submitted successfully!");
+                // You might want to redirect or submit the form here
+            }
+        }
+    </script>
+</body>
+</html>
+

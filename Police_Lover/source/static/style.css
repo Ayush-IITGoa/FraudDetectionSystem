@@ -1,0 +1,220 @@
+/* Base styles */
+html, body {
+    height: 100%; /* Full height for html and body */
+    margin: 0;
+}
+
+body {
+    display: flex; /* Use flexbox to layout */
+    flex-direction: column; /* Stack children vertically */
+    font-family: 'Rajdhani', Arial, sans-serif;
+    background: linear-gradient(90deg, rgb(59, 53, 56) 0%, rgb(105, 105, 127) 35%, rgb(51, 58, 59) 100%);
+}
+
+.navbar {
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav links */
+    align-items: center; /* Vertically center items */
+    background-color: black; /* Navbar background color */
+    padding: 0.5vh 2vw; /* Use vh and vw for padding */
+    height: 10vh; /* Set height using vh */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 7vh; /* Set a max height for the logo using vh */
+    height: auto;
+    width: auto;
+    margin-right: 1vw;
+}
+
+.logo p {
+    color: white;
+    font-size: 1.8vh; /* Use vh for font size */
+    margin: 0;
+    letter-spacing: 0.5vw; /* Adjust spacing with vw */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    margin-left: 2vw;
+    font-size: 1.vh; /* Font size using vh */
+    letter-spacing: 0.3vw;
+}
+
+/* Main content section */
+.subsection31 {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    margin: 10vh 4vw; /* Use vh and vw for margin */
+    align-items: center;
+}
+
+.subsection311 {
+    flex: 1;
+    max-width: 50vw; /* Restricts the maximum size of the image */
+    margin: 2vh; /* Use vh for spacing around the section */
+}
+
+.subsection311 img {
+    width: 100%;
+    height: auto;
+    border-radius: 1vw;
+    box-shadow: 0 0.5vh 1.5vh rgb(225, 215, 215); /* Shadow adjustments using vh */
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subsection311 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1vh 1.5vh rgba(0, 0, 0, 0.3); /* Hover shadow */
+}
+
+.slide {
+    display: none;
+}
+
+.slide.active {
+    display: block;
+}
+
+.content {
+    flex: 1;
+    color: whitesmoke;
+    margin: 2vh 2vw; /* Adjust margin using vh and vw */
+}
+
+.box1 {
+    margin-top: 2vh; /* Margin using vh */
+    max-width: 50vw; /* Width relative to viewport */
+    line-height: 1.6;
+}
+
+.box2 {
+    margin-top: 2vh; /* Margin using vh */
+    display: flex; /* Align buttons horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 2vw; /* Space between buttons */
+}
+
+.button1, .button2 {
+    box-shadow: 0 0.5vh 1.5vh rgb(199, 190, 190); /* Shadow using vh */
+    color: #060505;
+    background-color: #ffffff;
+    height: 7vh; /* Use vh for height */
+    border-radius: 2vw; /* Radius using vw */
+    letter-spacing: 0.2vw; /* Letter spacing using vw */
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.button1 {
+    width: 20vw; /* Width using vw */
+}
+
+.button2 {
+    width: 25vw; /* Width using vw */
+}
+
+.button1:hover, .button2:hover {
+    background-color: #403421;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 1vh 1.5vh rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+/* Footer */
+.footer {
+    margin-top: 5vh;
+    width: 100%;
+    height: 10vh; /* Use vh for height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 0.2vw; /* Use vw for letter spacing */
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+
+/* Text animation */
+.text-js {
+    display: inline-block;
+    padding-top: 1vh; /* Use vh for padding */
+    font-size: 4vh; /* Use vh for font size */
+    font-weight: lighter;
+    color: #ffffff;
+    margin-left: 0;
+}
+
+.text-js span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-2vh); /* Use vh for transform */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1vh 2vw; /* Adjust padding */
+    }
+
+    .menu {
+        margin-top: 2vh;
+    }
+
+    .menu a {
+        font-size: 1.2vh; /* Adjust font size */
+        margin: 1vh 0;
+    }
+
+    .subsection31 {
+        flex-direction: column;
+        margin: 5vh 2vw;
+    }
+
+    .subsection311, .content {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin: 1vh 0;
+    }
+
+    .button1, .button2 {
+        width: 90vw; /* Full width for mobile */
+        height: 6vh; /* Adjust height */
+    }
+
+    .text-js {
+        font-size: 3vh; /* Smaller font size */
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box1 {
+        max-width: 90vw; /* Max width using vw */
+    }
+
+    .button1, .button2 {
+        height: 5vh; /* Smaller height */
+    }
+}

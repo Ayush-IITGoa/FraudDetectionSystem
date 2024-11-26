@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Website Detection</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="Emblem_of_Goa_Police.png" alt="Goa Police">
+            <p>GOA POLICE</p>
+        </div>
+        
+        <div class="menu">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </div>
+    <form method="post" class="form-container">
+        <label for="countryCode" class="heading">Enter the Suspicious Number</label>
+    
+        <input type="text" id="countryCode" name="countryCode" placeholder="Country Code (Enter if any)" pattern="[0-9]{1,4}" title="Country code should be 1 to 4 digits">
+        
+        <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required pattern="[0-9]{7,15}" title="Phone number should be 7 to 15 digits">
+        
+        <div class="warning" id="warningMessage" style="display: none;">Phone number is required!</div>
+        
+        <button type="submit" class="tempu">Submit</button>
+        
+    </form>
+    
+
+    
+    <footer>
+        <div class="footer">
+            Website Policy | Contact Us | Feedback | Help | Site Map <br>
+            Copyright © 2017 Goa Police Department. All Rights Reserved <br>
+            This site is best viewed in 1534x707
+        </div>
+    </footer>
+    
+    <script>
+        function validateForm() {
+            let phoneNumber = document.getElementById("phoneNumber").value;
+            let warningMessage = document.getElementById("warningMessage");
+    
+            if(phoneNumber === ""){
+                // If the phone number field is empty, show the warning message
+                warningMessage.style.display = "block";
+            }else{
+                // Otherwise, hide the warning and proceed
+                warningMessage.style.display = "none";
+                alert("Form submitted successfully!");
+            }
+        }
+    </script>
+</body>
+</html>

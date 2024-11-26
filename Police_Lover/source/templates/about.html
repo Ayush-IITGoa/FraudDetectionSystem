@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Fraud Website Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styleAb.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="static/images/Emblem_of_Goa_Police.png" alt="Goa Police">
+            <p>GOA POLICE</p>
+        </div>
+        
+        <div class="menu">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            
+        </div>
+    </div>
+
+    <div class="about-container">
+        <h1 class="about-header">About Our Fraud Website Detection Platform</h1>
+        <p class="about-text">
+            Welcome to our <span class="highlight">Fraud Website Detection Platform</span>! Our mission is to help users identify and avoid potentially fraudulent websites. With the increasing number of online scams, it’s essential to have a tool that provides reliable information and helps you stay safe while browsing the web. Our platform is designed to be user-friendly, fast, and effective in detecting suspicious websites.
+        </p>
+        <p class="about-text">
+            Simply enter the URL of a website you suspect to be fake, and our system will analyze its content and behavior to determine if it is legitimate or fraudulent. Whether you’re an individual concerned about your online security or a business looking to protect your customers, our platform offers a comprehensive solution.
+        </p>
+        
+        <h2 class="about-header">Key Features</h2>
+        <ul class="features-list">
+            <li>Fast and accurate website analysis to identify potential scams.</li>
+            <li>Easy-to-use interface for submitting and reviewing URLs.</li>
+            <li>Real-time updates to ensure the latest information on fraudulent activities.</li>
+            <li>Advanced algorithms that consider multiple factors to provide a reliable assessment.</li>
+        </ul>
+
+        <p class="about-text">
+            By using our platform, you can reduce the risk of falling victim to online scams and contribute to a safer digital environment. Join us in the fight against online fraud and make the internet a safer place for everyone!
+        </p>
+        <button class="action-button" onclick="window.location.href='detect.html'">Start Detecting Fraudulent Websites</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            Website Policy | Contact Us | Feedback | Help | Site Map <br>
+            Copyright © 2017 Goa Police Department. All Rights Reserved <br>
+            This site is best viewed in 1534x707
+        </div>
+    </footer>
+</body>
+</html>
